@@ -1,0 +1,50 @@
+[
+  {
+    "route": "home",
+    "violations": []
+  },
+  {
+    "route": "legends",
+    "violations": []
+  },
+  {
+    "route": "gallery",
+    "violations": []
+  },
+  {
+    "route": "language",
+    "violations": []
+  },
+  {
+    "route": "community",
+    "violations": []
+  },
+  {
+    "route": "dance",
+    "violations": []
+  },
+  {
+    "route": "outfit",
+    "violations": []
+  },
+  {
+    "route": "takeitirl",
+    "violations": []
+  },
+  {
+    "route": "clubs",
+    "violations": []
+  },
+  {
+    "route": "why",
+    "violations": []
+  },
+  {
+    "route": "impact",
+    "violations": []
+  },
+  {
+    "route": "moderator",
+    "violations": []
+  }
+]

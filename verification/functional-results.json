@@ -1,0 +1,124 @@
+[
+  {
+    "name": "Story reading",
+    "pass": true
+  },
+  {
+    "name": "Timun Mas branching completion",
+    "pass": true
+  },
+  {
+    "name": "Wrong quiz feedback",
+    "pass": true
+  },
+  {
+    "name": "Quiz completion",
+    "pass": true
+  },
+  {
+    "name": "Mismatch feedback",
+    "pass": true
+  },
+  {
+    "name": "Matching completion",
+    "pass": true
+  },
+  {
+    "name": "Accessible sorting game",
+    "pass": true
+  },
+  {
+    "name": "Matching refresh persistence",
+    "pass": true
+  },
+  {
+    "name": "Outfit saves notes locally",
+    "pass": true
+  },
+  {
+    "name": "Outfit downloads chosen study notes",
+    "pass": true
+  },
+  {
+    "name": "Dance review completion",
+    "pass": true
+  },
+  {
+    "name": "Guest camera does not activate",
+    "pass": true
+  },
+  {
+    "name": "Guided family reflection",
+    "pass": true
+  },
+  {
+    "name": "Kila responds with source and honest local status",
+    "pass": true
+  },
+  {
+    "name": "Kila conversation clears",
+    "pass": true
+  },
+  {
+    "name": "Kila closes with Escape",
+    "pass": true
+  },
+  {
+    "name": "Accessibility switches, text size and focus return",
+    "pass": true
+  },
+  {
+    "name": "Saved outfit draft restores",
+    "pass": true
+  },
+  {
+    "name": "Account form empty validation",
+    "pass": true
+  },
+  {
+    "name": "Account email format validation",
+    "pass": true
+  },
+  {
+    "name": "Account service failure feedback",
+    "pass": true,
+    "detail": "Network deliberately blocked; no real login performed."
+  },
+  {
+    "name": "Browser back navigation",
+    "pass": true
+  },
+  {
+    "name": "Unknown route fallback",
+    "pass": true
+  },
+  {
+    "name": "Mobile navigation opens and selects route",
+    "pass": true
+  },
+  {
+    "name": "Profile-scoped outfit draft persists on refresh",
+    "pass": true
+  },
+  {
+    "name": "High contrast accessibility dialog scan",
+    "pass": true,
+    "detail": []
+  },
+  {
+    "name": "Dialog traps Tab in both directions",
+    "pass": true
+  },
+  {
+    "name": "Unavailable storage is handled visibly",
+    "pass": true
+  },
+  {
+    "name": "Indonesian interface toggle",
+    "pass": true
+  },
+  {
+    "name": "Analytical Exposition remains available in both languages",
+    "pass": true
+  }
+]

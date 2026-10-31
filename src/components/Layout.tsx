@@ -1,0 +1,43 @@
+import { useState, type ReactNode } from 'react';
+import { useApp } from '@/context/AppContext';
+import { useAuth } from '@/context/AuthContext';
+import { KilaMascot } from './KilaMascot';
+import { Modal, Button } from './ui';
+import { ProfileModal } from './ProfileModal';
+import { AccessibilityModal } from './AccessibilityModal';
+import { Accessibility, Menu, X, Globe, ArrowRight, Sparkles, Settings2, UserRound } from 'lucide-react';
+import type { Page } from '@/types';
+
+const navigation: {page: Page; EN: string; ID: string}[] = [
+  {page:'home',EN:'Home',ID:'Beranda'}, {page:'legends',EN:'Stories',ID:'Cerita'}, {page:'gallery',EN:'Explore culture',ID:'Jelajah budaya'}, {page:'language',EN:'Language & games',ID:'Bahasa & permainan'}, {page:'dance',EN:'Dance Studio',ID:'Studio Tari'}, {page:'outfit',EN:'Outfit Studio',ID:'Studio Busana'}, {page:'community',EN:'Community',ID:'Komunitas'}, {page:'clubs',EN:'Culture Clubs',ID:'Klub Budaya'}, {page:'takeitirl',EN:'Take It IRL',ID:'Coba di Rumah'},
+];
+export function Layout({children}: {children: ReactNode}) {
+  const { currentPage,setPage,language,setLanguage,profile,learningStyle,setLearningStyle,mode,setMode,ageGroup,restoring,localSaveError }=useApp();
+  const {user,syncStatus}=useAuth();
+  const [menu,setMenu]=useState(false), [access,setAccess]=useState(false), [profileOpen,setProfileOpen]=useState(false), [preferences,setPreferences]=useState(false);
+  const [info,setInfo]=useState<'privacy'|'teachers'|'report'|null>(null);
+  const id=language==='ID';
+  const go=(page:Page)=>{setPage(page);setMenu(false);};
+  const openAccount=()=>window.dispatchEvent(new CustomEvent('open-account'));
+  const navItems=(mobile=false)=>navigation.map(item=><button key={item.page} className="nav-link" onClick={()=>go(item.page)} aria-current={currentPage===item.page?'page':undefined}>{item[language]}{mobile&&currentPage===item.page&&<span className="sr-only"> — current page</span>}</button>);
+  return <div className="min-h-screen">
+    <a className="skip-link" href="#main-content">{id?'Langsung ke isi':'Skip to content'}</a>
+    <header className="site-header"><div className="header-inner">
+      <button className="brand" onClick={()=>go('home')} aria-label="CulturInd.ai home"><KilaMascot size={43} decorative/><span>CulturInd<span className="text-batik-700">.ai</span><small>A LITTLE CURIOSITY. A WHOLE ARCHIPELAGO.</small></span></button>
+      <div className="header-tools">
+        <button className="icon-button language-tool" onClick={()=>setLanguage(id?'EN':'ID')} aria-label={id?'Switch to English':'Ganti ke Bahasa Indonesia'}><Globe size={16}/><span className="ml-1">{language}</span></button>
+        <button className="icon-button desktop-tool" onClick={()=>setPreferences(true)} aria-label="Learning preferences"><Settings2 size={18}/></button>
+        <button className="icon-button" onClick={()=>setAccess(true)} aria-label="Accessibility settings"><Accessibility size={19}/></button>
+        <button className="story-button button-primary button-sm desktop-tool" onClick={()=>user?setProfileOpen(true):openAccount()}><UserRound size={16}/>{user?profile.nickname:id?'Masuk':'Sign in'}<ArrowRight size={14}/></button>
+        <button className="icon-button mobile-menu-toggle" onClick={()=>setMenu(!menu)} aria-label={menu?'Close navigation':'Open navigation'} aria-expanded={menu} aria-controls="mobile-navigation">{menu?<X size={20}/>:<Menu size={20}/>}</button>
+      </div></div>
+      <nav className="desktop-nav" aria-label="Main navigation">{navItems()}</nav>
+      {menu&&<nav id="mobile-navigation" className="mobile-nav grid grid-cols-2 gap-1" aria-label="Mobile navigation">{navItems(true)}<button className="nav-link" onClick={()=>{setPreferences(true);setMenu(false);}}>Learning preferences</button><button className="nav-link" onClick={()=>setLanguage(id?'EN':'ID')}>{id?'English':'Bahasa Indonesia'}</button><button className="nav-link" onClick={()=>{setProfileOpen(true);setMenu(false);}}>Profile & badges</button><button className="nav-link" onClick={openAccount}>{user?'Account':'Sign in'}</button></nav>}
+    </header>
+    <main id="main-content" tabIndex={-1} className="site-main">{children}</main>
+    <footer className="site-footer"><div className="footer-grid"><div><button className="brand" onClick={()=>go('home')}><KilaMascot size={36} decorative/>CulturInd.ai</button><p>{id?'Setiap pulau punya cerita. Jelajahi budaya Indonesia dengan rasa ingin tahu, kreativitas, dan rasa hormat.':'Every island has a story. Explore Indonesia’s living cultures with curiosity, creativity, and care.'}</p></div><div className="footer-links"><strong>{id?'Jelajahi':'Keep exploring'}</strong><button onClick={()=>go('legends')}>Stories & folklore</button><button onClick={()=>go('gallery')}>Arts & traditions</button><button onClick={()=>go('why')}>Why CulturInd.ai</button><button onClick={()=>go('impact')}>Your learning journey</button></div><div className="footer-links"><strong>{id?'Ruang untuk semua':'A place for everyone'}</strong><button onClick={()=>setAccess(true)}>Accessibility</button><button onClick={()=>setInfo('teachers')}>For families & teachers</button><button onClick={()=>setInfo('privacy')}>Privacy & your data</button><button onClick={()=>setInfo('report')}>Report a problem</button></div></div><div className="footer-note"><span>Made with curiosity, rooted in Indonesia.</span><span role="status">{localSaveError?'Browser storage is unavailable. Progress may be lost when you leave.':restoring?'Restoring progress…':user?(syncStatus==='saved'?'Progress synced to your account':syncStatus==='error'?'Account sync failed. Your progress is saved on this device.':syncStatus==='saving'?'Saving progress…':'Account connected'):'Guest progress stays in this browser.'}</span></div></footer>
+    <ProfileModal open={profileOpen} onClose={()=>setProfileOpen(false)}/><AccessibilityModal open={access} onClose={()=>setAccess(false)}/>
+    <Modal open={preferences} onClose={()=>setPreferences(false)} title={id?'Cara belajarmu':'Make yourself at home'} maxWidth="max-w-lg"><p className="text-ink-300 mb-5">Choose how to explore. You can switch at any time.</p><label className="block mb-5">Language<select aria-label="Interface language" className="w-full block mt-2 border border-ink-600 rounded-xl p-3" value={language} onChange={e=>setLanguage(e.target.value as 'EN'|'ID')}><option value="EN">English</option><option value="ID">Bahasa Indonesia</option></select></label><label className="block mb-5">Learning preference<select aria-label="Learning preference" className="w-full block mt-2 border border-ink-600 rounded-xl p-3" value={learningStyle} onChange={e=>setLearningStyle(e.target.value as typeof learningStyle)}><option>Visual</option><option>Auditory</option><option>Kinesthetic</option></select></label><div className="flex gap-2 mb-3"><Button variant={mode==='Explorer'?'primary':'secondary'} onClick={()=>setMode('Explorer')}>Explorer</Button><Button disabled={!ageGroup||ageGroup==='kid'||ageGroup==='under7'} variant={mode==='Creator'?'primary':'secondary'} onClick={()=>setMode('Creator')}>Creator · 13+</Button></div><p className="text-sm text-ink-300">{!ageGroup?'Sign in and complete onboarding to set an age group.':'Creator activities are available to ages 13 and above.'}</p><Button className="mt-5" onClick={()=>{setPreferences(false);go(navigation[1+Math.floor(Math.random()*8)].page);}}><Sparkles size={16}/>Surprise me</Button></Modal>
+    <Modal open={!!info} onClose={()=>setInfo(null)} title={info==='privacy'?'Privacy & your data':info==='teachers'?'For families & teachers':'Report a problem'}><p className="text-ink-200">{info==='privacy'?'You can explore without an account. Guest progress is stored in this browser. Signed-in profiles and learning progress use the configured Supabase service. Kila’s current guide runs locally. The optional dance mirror uses your camera only after you request it; this app does not record or upload camera frames. Community examples are a local demonstration.':info==='teachers'?'Explore together: read a story, discuss how versions differ, try a language game, then ask family members about a tradition they know. The Analytical Exposition presents the original author’s argument. Cultural summaries and art are learning aids, and should be discussed alongside community and institutional sources.':'No reporting service is connected in this project. Please share the page name, what happened, and steps to reproduce directly with the person who provided this website. Avoid including passwords or personal information.'}</p></Modal>
+  </div>;
+}

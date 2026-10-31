@@ -1,0 +1,254 @@
+[
+  {
+    "route": "home",
+    "width": 1440,
+    "overflow": false,
+    "title": "So many islands.\nSo many stories.\nLet’s discover."
+  },
+  {
+    "route": "legends",
+    "width": 1440,
+    "overflow": false,
+    "title": "Indonesian Legends"
+  },
+  {
+    "route": "gallery",
+    "width": 1440,
+    "overflow": false,
+    "title": "Art & Culture Gallery"
+  },
+  {
+    "route": "language",
+    "width": 1440,
+    "overflow": false,
+    "title": "Language Center"
+  },
+  {
+    "route": "community",
+    "width": 1440,
+    "overflow": false,
+    "title": "Community"
+  },
+  {
+    "route": "dance",
+    "width": 1440,
+    "overflow": false,
+    "title": "Dance Studio"
+  },
+  {
+    "route": "outfit",
+    "width": 1440,
+    "overflow": false,
+    "title": "Outfit Studio"
+  },
+  {
+    "route": "takeitirl",
+    "width": 1440,
+    "overflow": false,
+    "title": "Take It IRL"
+  },
+  {
+    "route": "clubs",
+    "width": 1440,
+    "overflow": false,
+    "title": "Culture Clubs"
+  },
+  {
+    "route": "why",
+    "width": 1440,
+    "overflow": false,
+    "title": "So many islands.\nSo many stories.\nLet’s discover."
+  },
+  {
+    "route": "impact",
+    "width": 1440,
+    "overflow": false,
+    "title": "Your learning journey"
+  },
+  {
+    "route": "moderator",
+    "width": 1440,
+    "overflow": false,
+    "title": "Moderation Demo"
+  },
+  {
+    "route": "home",
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "route": "legends",
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "route": "gallery",
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "route": "language",
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "route": "community",
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "route": "dance",
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "route": "outfit",
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "route": "takeitirl",
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "route": "clubs",
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "route": "why",
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "route": "impact",
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "route": "moderator",
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "route": "home",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "legends",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "gallery",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "language",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "community",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "dance",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "outfit",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "takeitirl",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "clubs",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "why",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "impact",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "moderator",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "home",
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "route": "legends",
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "route": "gallery",
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "route": "language",
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "route": "community",
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "route": "dance",
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "route": "outfit",
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "route": "takeitirl",
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "route": "clubs",
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "route": "why",
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "route": "impact",
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "route": "moderator",
+    "width": 1024,
+    "overflow": false
+  }
+]
